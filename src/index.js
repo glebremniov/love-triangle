@@ -2,22 +2,25 @@ const checkIfElementExists = (array = [], n) => {
     return array.length >= n;
 };
 
+const getLover = (array = [], n) => {
+    if (checkIfElementExists(array, n)) {
+        return array[n - 1]
+    }
+}
+
 const getLoveTrianglesCount = (preferences = []) => {
     // your implementation
     let loveTrianglesCount = 0;
 
     preferences.forEach((item, index) => {
 
-        if (checkIfElementExists(preferences, item)) {
+        const secondLover = getLover(preferences, item);
 
-            const secondLover = preferences[item - 1];
+        if (secondLover) {
+            const thirdLover = getLover(preferences, secondLover)
 
-            if (checkIfElementExists(preferences, secondLover)) {
-                const thirdLover = preferences[secondLover - 1]
-
-                if (thirdLover === index + 1) {
-                    loveTrianglesCount++
-                }
+            if (thirdLover === index + 1) {
+                loveTrianglesCount++
             }
         }
 
