@@ -1,6 +1,6 @@
-const assert = require('assert');
+import { getLoveTrianglesCount } from './src/index.js';
+import assert from 'assert';
 Object.freeze(assert);
-const getLoveTrianglesCount = require('./src/index');
 
 describe('Love triangles', () => {
   it('1', () => {

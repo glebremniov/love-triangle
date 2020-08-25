@@ -1,6 +1,7 @@
 {
   "name": "love-triangle",
   "version": "1.0.0",
+  "type": "module",
   "description": "Love triangle",
   "main": "src/index.js",
   "scripts": {
